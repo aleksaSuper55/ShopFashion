@@ -14,7 +14,7 @@ public class Splash2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash2);
 
-        Button nextButton = findViewById(R.id.get_started);
+        Button nextButton = findViewById(R.id.get_started2);
 
         if (nextButton != null) {
             nextButton.setOnClickListener(new View.OnClickListener() {
@@ -30,8 +30,9 @@ public class Splash2 extends AppCompatActivity {
                 }
             });
             nxt2 = findViewById(R.id.nxt2);
-            nxt2.setOnClickListener(v -> startActivity(new Intent(this, MainActivity.class)));
+            nxt2.setOnClickListener(v -> startActivity(new Intent(this, SignIn.class)));
             bb = findViewById(R.id.bb);
             bb.setOnClickListener(v -> startActivity(new Intent(this, Splash1.class)));
+
         }
     }}

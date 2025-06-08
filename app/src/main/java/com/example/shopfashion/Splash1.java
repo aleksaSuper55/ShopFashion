@@ -10,7 +10,7 @@ import androidx.core.view.WindowInsetsCompat;
 import android.widget.Button;
 
 public class Splash1 extends AppCompatActivity {
-    public Button nxt;
+    public Button nxt, get_started;
 
 
     @SuppressLint("MissingInflatedId")
@@ -26,4 +26,6 @@ public class Splash1 extends AppCompatActivity {
         });
         nxt = findViewById(R.id.nxt);
         nxt.setOnClickListener(v -> startActivity(new Intent(this, Splash2.class)));
+        get_started = findViewById(R.id.get_started);
+        get_started.setOnClickListener(v -> startActivity(new Intent(this, Shop.class)));
     }}

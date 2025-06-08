@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:id="@+id/createAcc">
+    <Button
+        android:id="@+id/returnToPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFFFFF"
+        android:drawableLeft="@drawable/str"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Account"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif"
+        android:textColor="#000000"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp">
+
+        <EditText
+            android:id="@+id/nameforacc"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Your Login"
+            android:background="#DCDCDC"/>
+
+        <EditText
+            android:id="@+id/firstn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="First name"
+            android:background="#DCDCDC"
+            android:layout_marginTop="10dp"/>
+        <EditText
+            android:id="@+id/lastn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Last name"
+            android:background="#DCDCDC"
+            android:layout_marginTop="10dp"/>
+        <EditText
+            android:id="@+id/adress"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Adress"
+            android:background="#DCDCDC"
+            android:layout_marginTop="10dp"/>
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Email Address"
+            android:background="#DCDCDC"
+            android:layout_marginTop="10dp"
+            android:inputType="textEmailAddress"/>
+        <EditText
+            android:id="@+id/pas1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Password"
+            android:background="#DCDCDC"
+            android:layout_marginTop="10dp"
+            android:inputType="textPassword"/>
+        <EditText
+            android:id="@+id/pas2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Repeat password"
+            android:background="#DCDCDC"
+            android:layout_marginTop="10dp"
+            android:inputType="textPassword"/>
+    </LinearLayout>
+    <Button
+        android:id="@+id/contacc"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/square"
+        android:text="Start Shopping"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:backgroundTint="@null"/>
+</LinearLayout>

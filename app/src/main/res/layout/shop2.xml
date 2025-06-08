@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="215dp"
+    android:layout_height="310dp"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/dressImage"
+        android:layout_width="165dp"
+        android:layout_height="220dp"
+        android:layout_x="27dp"
+        android:layout_y="-1dp"
+        android:src="@drawable/img18" />
+
+    <TextView
+        android:id="@+id/dressName"
+        android:layout_width="157dp"
+        android:layout_height="wrap_content"
+        android:layout_x="34dp"
+        android:layout_y="229dp"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="21WN "
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/dressPrice"
+        android:layout_width="136dp"
+        android:layout_height="wrap_content"
+        android:layout_x="46dp"
+        android:layout_y="263dp"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="$120"
+        android:textColor="#DD8560"
+        android:textSize="14sp" />
+
+    <ImageButton
+        android:id="@+id/Services"
+        android:layout_width="35dp"
+        android:layout_height="23dp"
+        android:layout_weight="1"
+        android:layout_x="158dp"
+        android:layout_y="200dp"
+        android:src="@drawable/cart" />
+</AbsoluteLayout>
