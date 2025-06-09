@@ -19,5 +19,5 @@
     <item
         android:id="@+id/sales"
         android:icon="@drawable/dow"
-        android:title="Sales" />
+        android:title="Discounts" />
 </menu>

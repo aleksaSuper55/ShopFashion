@@ -4,24 +4,22 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class Profile extends AppCompatActivity {
-    public BottomNavigationView bottomNavigationView;
+public class Discounts extends AppCompatActivity {
+    BottomNavigationView bottomNavigationView;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.profile);
+        setContentView(R.layout.discounts);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.banner), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -33,23 +31,23 @@ public class Profile extends AppCompatActivity {
                 int itemId = item.getItemId();
 
                 if (itemId == R.id.shoppage) {
-                    Intent intent = new Intent(Profile.this, Shop.class);
+                    Intent intent = new Intent(Discounts.this, Shop.class);
                     startActivity(intent);
                     return true;
                 } else if (itemId == R.id.category) {
-                    Intent intent = new Intent(Profile.this, Category.class);
+                    Intent intent = new Intent(Discounts.this, Category.class);
                     startActivity(intent);
                     return true;}
                 else if (itemId == R.id.cart) {
-                    Intent intent = new Intent(Profile.this, Cart.class);
+                    Intent intent = new Intent(Discounts.this, Cart.class);
                     startActivity(intent);
                     return true;
                 } else if (itemId == R.id.profile) {
-                    Intent intent = new Intent(Profile.this, Profile.class);
+                    Intent intent = new Intent(Discounts.this, Profile.class);
                     startActivity(intent);
                     return true;
                 } else if (itemId == R.id.sales) {
-                    Intent intent = new Intent(Profile.this, Discounts.class);
+                    Intent intent = new Intent(Discounts.this, Discounts.class);
                     startActivity(intent);
                     return true;
                 } else {
@@ -57,4 +55,4 @@ public class Profile extends AppCompatActivity {
                 }
             }
         });
-}}
+    }}

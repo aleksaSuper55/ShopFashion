@@ -29,6 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="135dp"
             android:text="Open"
+            android:layout_marginTop="5dp"
             android:textColor="#1C162E"
             android:textSize="18dp"
             android:textStyle="bold|italic" />
@@ -40,6 +41,7 @@
             android:text=" Fashion"
             android:textColor="#1C162E"
             android:textSize="18dp"
+            android:layout_marginTop="20dp"
             android:textStyle="bold|italic"
             app:layout_constraintEnd_toEndOf="@+id/banner" />
         <ImageButton

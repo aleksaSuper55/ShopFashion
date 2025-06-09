@@ -37,20 +37,20 @@ public class Shop extends AppCompatActivity {
                     startActivity(intent);
                     return true;
                 } else if (itemId == R.id.category) {
-//                    Intent intent = new Intent(Shop.this, Category.class);
-//                    startActivity(intent);
+                    Intent intent = new Intent(Shop.this, Category.class);
+                    startActivity(intent);
                     return true;}
                 else if (itemId == R.id.cart) {
-//                    Intent intent = new Intent(Shop.this, Cart.class);
-//                    startActivity(intent);
+                    Intent intent = new Intent(Shop.this, Cart.class);
+                    startActivity(intent);
                     return true;
                 } else if (itemId == R.id.profile) {
                     Intent intent = new Intent(Shop.this, Profile.class);
                     startActivity(intent);
                     return true;
                 } else if (itemId == R.id.sales) {
-//                    Intent intent = new Intent(Shop.this, Discount.class);
-//                    startActivity(intent);
+                    Intent intent = new Intent(Shop.this, Discounts.class);
+                    startActivity(intent);
                     return true;
                 } else {
                     return false;
