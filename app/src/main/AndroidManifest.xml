@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ShopFashion">
         <activity
-            android:name=".Shop"
+            android:name=".Product"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -60,6 +60,9 @@
             android:exported="true">
         </activity>
         <activity android:name=".Error"
+            android:exported="true">
+        </activity>
+        <activity android:name=".Shop"
             android:exported="true">
         </activity>
     </application>
