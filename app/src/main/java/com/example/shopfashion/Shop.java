@@ -14,7 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Shop extends AppCompatActivity {
-    ImageButton menu, search;
+    ImageButton menu, search, collection;
     BottomNavigationView bottomNavigationView;
     @SuppressLint("MissingInflatedId")
     @Override
@@ -26,6 +26,11 @@ public class Shop extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+        collection = findViewById(R.id.collection);
+        collection.setOnClickListener(view -> {
+            startActivity(new Intent(this, Collectinn.class));
+            finish();
         });
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
