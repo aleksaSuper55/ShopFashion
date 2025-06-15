@@ -75,7 +75,7 @@
         android:layout_width="wrap_content"
         android:layout_height="35dp"
         android:layout_marginLeft="35dp"
-        android:text="MOHAN"
+        android:hint="MOHAN"
         android:textSize="25dp"
         android:gravity="center"
         android:textStyle="bold"/>
@@ -92,7 +92,7 @@
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:layout_marginLeft="35dp"
-            android:text="Recycle Boucle Knit Cardigan Pink"
+            android:hint="Recycle Boucle Knit Cardigan Pink"
             android:textSize="20dp"
             android:gravity="center"
             android:textStyle="bold"/>
@@ -109,7 +109,7 @@
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:layout_marginLeft="35dp"
-            android:text="$120"
+            android:hint="$120"
             android:textColor="#DD8560"
             android:textSize="20dp"
             android:gravity="center"

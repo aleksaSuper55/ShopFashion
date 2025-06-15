@@ -12,7 +12,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class New_card extends AppCompatActivity {
-    private ImageButton returnToCart;
+    private ImageButton returnToCart, search;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +20,13 @@ public class New_card extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.add_new_card);
         returnToCart = findViewById(R.id.cartt);
+        search = findViewById(R.id.search);
         returnToCart.setOnClickListener(view -> {
             startActivity(new Intent(this, Cart.class));
+            finish();
+        });
+        search.setOnClickListener(view -> {
+            startActivity(new Intent(this, SearchActivity.class));
             finish();
         });
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.banner), (v, insets) -> {

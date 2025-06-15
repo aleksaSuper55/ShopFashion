@@ -27,6 +27,11 @@ public class Shop extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        search = findViewById(R.id.search);
+        search.setOnClickListener(view -> {
+            startActivity(new Intent(this, SearchActivity.class));
+            finish();
+        });
         collection = findViewById(R.id.collection);
         collection.setOnClickListener(view -> {
             startActivity(new Intent(this, Collectinn.class));

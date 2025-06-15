@@ -12,13 +12,18 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class NewAddress extends AppCompatActivity {
-    private ImageButton returnToCart;
+    private ImageButton returnToCart, search;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.newaddress);
+        search = findViewById(R.id.search);
+        search.setOnClickListener(view -> {
+            startActivity(new Intent(this, SearchActivity.class));
+            finish();
+        });
         returnToCart = findViewById(R.id.cartt);
         returnToCart.setOnClickListener(view -> {
             startActivity(new Intent(this, Cart.class));
