@@ -27,5 +27,5 @@ public class Splash1 extends AppCompatActivity {
         nxt = findViewById(R.id.nxt);
         nxt.setOnClickListener(v -> startActivity(new Intent(this, Splash2.class)));
         get_started = findViewById(R.id.get_started);
-        get_started.setOnClickListener(v -> startActivity(new Intent(this, Shop.class)));
+        get_started.setOnClickListener(v -> startActivity(new Intent(this, PinCode.class)));
     }}

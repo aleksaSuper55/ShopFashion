@@ -106,7 +106,7 @@
         android:layout_marginTop="310dp"
         android:layout_marginRight="30dp"
         android:background="@drawable/square"
-        android:text="Start Shopping"
+        android:text="Add pin-code"
         android:textSize="20sp"
         android:textStyle="italic"
         app:backgroundTint="@null"/>

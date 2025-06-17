@@ -18,7 +18,7 @@ public class New_card extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.add_new_card);
+        setContentView(R.layout.my_card);
         returnToCart = findViewById(R.id.cartt);
         search = findViewById(R.id.search);
         returnToCart.setOnClickListener(view -> {

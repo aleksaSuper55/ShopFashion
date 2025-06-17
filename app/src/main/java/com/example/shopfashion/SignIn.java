@@ -41,7 +41,7 @@ public class SignIn extends AppCompatActivity {
                 String emailinput= emailAdrress.getText().toString().trim();
                 String passinput= password.getText().toString().trim();
                 if((isValueEmailOrNumber(emailinput)) && (isValuePassword(passinput))){
-                    Intent intent = new Intent(SignIn.this, Shop.class);
+                    Intent intent = new Intent(SignIn.this, PinCode.class);
                     startActivity(intent);}
             }
         });
@@ -62,9 +62,9 @@ public class SignIn extends AppCompatActivity {
     }
     private boolean isValueEmailOrNumber(String input){
         if(TextUtils.isEmpty(input)){
-            emailAdrress.setHint("Put your email address or phone number");
+            emailAdrress.setHint("Put your email address");
             emailAdrress.setHintTextColor(color);
-            Toast.makeText(SignIn.this, "Put an email address or phone number", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SignIn.this, "Put an email address", Toast.LENGTH_SHORT).show();
             return false;
         }
         // Проверка на email

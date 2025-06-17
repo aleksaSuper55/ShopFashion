@@ -7,14 +7,14 @@ import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 public class Splash2 extends AppCompatActivity {
-    public Button nxt2;
+    public Button nxt2, get_started;
     public Button bb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash2);
 
-        Button nextButton = findViewById(R.id.get_started2);
+        Button nextButton = findViewById(R.id.get_start);
 
         if (nextButton != null) {
             nextButton.setOnClickListener(new View.OnClickListener() {
@@ -33,6 +33,7 @@ public class Splash2 extends AppCompatActivity {
             nxt2.setOnClickListener(v -> startActivity(new Intent(this, SignIn.class)));
             bb = findViewById(R.id.bb);
             bb.setOnClickListener(v -> startActivity(new Intent(this, Splash1.class)));
-
+            get_started = findViewById(R.id.get_start);
+            get_started.setOnClickListener(v -> startActivity(new Intent(this, PinCode.class)));
         }
     }}

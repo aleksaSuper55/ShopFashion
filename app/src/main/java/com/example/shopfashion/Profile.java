@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -18,6 +19,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Profile extends AppCompatActivity {
     public ImageButton openNotific;
+    TextView aboutMe, myCart, myAddress, cards, history;
     public BottomNavigationView bottomNavigationView;
     @SuppressLint("MissingInflatedId")
     @Override
@@ -29,6 +31,31 @@ public class Profile extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+//        aboutMe = findViewById(R.id.AboutMe);
+//        openNotific.setOnClickListener(view -> {
+//            startActivity(new Intent(this, Notidications.class));
+//            finish();
+//        });
+        myCart = findViewById(R.id.Orders);
+        myCart.setOnClickListener(view -> {
+            startActivity(new Intent(this, Cart.class));
+            finish();
+        });
+        myAddress = findViewById(R.id.Adress);
+        myAddress.setOnClickListener(view -> {
+            startActivity(new Intent(this, NewAddress.class));
+            finish();
+        });
+        cards = findViewById(R.id.Cards);
+        cards.setOnClickListener(view -> {
+            startActivity(new Intent(this, New_card.class));
+            finish();
+        });
+        history = findViewById(R.id.History);
+        history.setOnClickListener(view -> {
+            startActivity(new Intent(this, MyOrders.class));
+            finish();
         });
         openNotific = findViewById(R.id.sear);
         openNotific.setOnClickListener(view -> {
