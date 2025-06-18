@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import com.bumptech.glide.Glide;
 import com.example.shopfashion.Models.Order;
 import com.example.shopfashion.R;
 import java.util.List;
@@ -19,7 +20,6 @@ public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.ViewHolder
         this.context = context;
         this.orderList = orderList;
     }
-
     @NonNull
     @Override
     public OrdersAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -27,14 +27,12 @@ public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.ViewHolder
                 .inflate(R.layout.order_items, parent, false);
         return new ViewHolder(view);
     }
-
     @Override
     public void onBindViewHolder(@NonNull OrdersAdapter.ViewHolder holder, int position) {
         Order order = orderList.get(position);
         holder.orderNumber.setText(String.valueOf(order.getId_orders()));
         holder.quantity.setText(order.getTotal_amount());
     }
-
     @Override
     public int getItemCount() {
         return orderList.size();

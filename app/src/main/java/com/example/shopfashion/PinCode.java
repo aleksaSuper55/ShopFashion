@@ -11,16 +11,14 @@ import androidx.appcompat.app.AppCompatActivity;
 public class PinCode extends AppCompatActivity {
     private EditText pinInput;
     private Button confirmButton;
-    private final String CORRECT_PIN = "1234"; // Исправлено на 4 цифры (как в вашем условии)
+    private final String CORRECT_PIN = "1234";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pin_code);
-
         pinInput = findViewById(R.id.pinInput);
         confirmButton = findViewById(R.id.confirmButton);
-
         setupPinInputListener();
         setupConfirmButton();
     }
