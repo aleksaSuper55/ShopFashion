@@ -25,7 +25,7 @@ public class CreateAccount extends AppCompatActivity {
         // Инициализация view
         initViews();
         returntoPage.setOnClickListener(view -> {
-            startActivity(new Intent(this, SignIn.class));
+            startActivity(new Intent(this, Login.class));
             finish();
         });
         contAcc.setOnClickListener(v -> {

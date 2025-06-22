@@ -9,22 +9,13 @@
         android:layout_height="90dp"
         app:layout_constraintTop_toTopOf="parent"
         android:orientation="horizontal">
-        <ImageButton
-            android:id="@+id/menu"
-            style="@style/Widget.Material3.Button.TextButton.Icon"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@drawable/menu"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
         <TextView
             android:id="@+id/banner"
             android:gravity="center_horizontal"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="115dp"
+            android:layout_marginLeft="180dp"
             android:text="Open\nFashion"
             android:textColor="#1C162E"
             android:textSize="18dp"

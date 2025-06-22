@@ -1,52 +1,75 @@
 package com.example.shopfashion;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import java.util.ArrayList;
 import java.util.List;
 public class SearchTermAdapter extends RecyclerView.Adapter<SearchTermAdapter.ViewHolder> {
+    private Context context;
     private List<String> searchTerms;
-    private OnItemClickListener listener;
 
-    public interface OnItemClickListener {
-        void onItemClick(String searchTerm);
-    }
-    public SearchTermAdapter(List<String> searchTerms, OnItemClickListener listener) {
+    public SearchTermAdapter(Context context, List<String> searchTerms) {
+        this.context = context;
         this.searchTerms = searchTerms;
-        this.listener = listener;
-    }
-    public void updateList(List<String> newList) {
-        searchTerms = new ArrayList<>(newList);
-        notifyDataSetChanged();
-    }
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView searchTermTextView;
-
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            searchTermTextView = itemView.findViewById(R.id.searchTermTextView);
-        }
     }
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.search_term_item, parent, false);
-        return new ViewHolder(itemView);
+        View view = LayoutInflater.from(context).inflate(android.R.layout.simple_list_item_1, parent, false);
+        return new ViewHolder(view);
     }
+
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         String searchTerm = searchTerms.get(position);
-        holder.searchTermTextView.setText(searchTerm);
-        holder.itemView.setOnClickListener(v -> listener.onItemClick(searchTerm));
+        holder.textView.setText(searchTerm);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navigateToCategory(searchTerm);
+            }
+        });
     }
     @Override
     public int getItemCount() {
         return searchTerms.size();
     }
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        TextView textView;
+
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+            textView = itemView.findViewById(android.R.id.text1);
+        }
+    }
+    private void navigateToCategory(String searchTerm) {
+        Intent intent = null;
+        switch (searchTerm) {
+            case "Dresses":
+                intent = new Intent(context, Woman.class);
+                break;
+            case "Suit":
+                intent = new Intent(context, Man.class);
+                break;
+            case "Accessories":
+                intent = new Intent(context, Accessories.class);
+                break;
+            // Add more cases for other categories as needed
+
+            default:
+                // Handle unknown category (optional)
+                // Could open a generic search results activity
+                break;
+        }
+        if (intent != null) {
+            context.startActivity(intent);
+        }
+    }
 }
+

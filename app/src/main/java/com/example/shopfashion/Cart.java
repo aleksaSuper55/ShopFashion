@@ -27,7 +27,7 @@ public class Cart extends AppCompatActivity {
         returnToPage = findViewById(R.id.returnToPage);
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         returnToPage.setOnClickListener(view -> {
-            startActivity(new Intent(this, Category.class));
+            startActivity(new Intent(this, Profile.class));
             finish();
         });
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.banner), (v, insets) -> {

@@ -30,10 +30,10 @@ public class Splash2 extends AppCompatActivity {
                 }
             });
             nxt2 = findViewById(R.id.nxt2);
-            nxt2.setOnClickListener(v -> startActivity(new Intent(this, SignIn.class)));
+            nxt2.setOnClickListener(v -> startActivity(new Intent(this, Login.class)));
             bb = findViewById(R.id.bb);
             bb.setOnClickListener(v -> startActivity(new Intent(this, Splash1.class)));
             get_started = findViewById(R.id.get_start);
-            get_started.setOnClickListener(v -> startActivity(new Intent(this, PinCode.class)));
+            get_started.setOnClickListener(v -> startActivity(new Intent(this, Login.class)));
         }
     }}

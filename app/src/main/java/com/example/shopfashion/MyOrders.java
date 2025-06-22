@@ -1,5 +1,6 @@
 package com.example.shopfashion;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -7,10 +8,8 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.bumptech.glide.Glide;
 import com.example.shopfashion.Adapters.OrdersAdapter;
 import com.example.shopfashion.Models.Order;
-import com.example.shopfashion.Models.ProfileActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
@@ -22,6 +21,10 @@ public class MyOrders extends AppCompatActivity {
     RecyclerView ordersRecyclerView;
     private void init() {
         returnToPage = findViewById(R.id.returnToPage);
+        returnToPage.setOnClickListener(view -> {
+            startActivity(new Intent(this, Profile.class));
+            finish();
+        });
         ordersRecyclerView = findViewById(R.id.ordersRecyclerView);
     }
     @Override
@@ -31,9 +34,7 @@ public class MyOrders extends AppCompatActivity {
         setContentView(R.layout.my_order);
         getAllOrders();
         init();
-        // TODO
-        DataBinding.saveBearerToken("Bearer eyJhbGciOiJIUzI1NiIsImtpZCI6ImFXQjZGY2cyb1N6c2x6bjQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2huamJxa2tmbnhidWFueHFhd2dwLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJlZjI2MjBmYy1jOTljLTRkZDQtYmU2Ny1jZmQ1NTUyNDdmZWUiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzUwMDYzMTY2LCJpYXQiOjE3NTAwNTk1NjYsImVtYWlsIjoidGVzdGljMkBlbWFpbC5jb20iLCJwaG9uZSI6IiIsImFwcF9tZXRhZGF0YSI6eyJwcm92aWRlciI6ImVtYWlsIiwicHJvdmlkZXJzIjpbImVtYWlsIl19LCJ1c2VyX21ldGFkYXRhIjp7ImVtYWlsIjoidGVzdGljMkBlbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicGhvbmVfdmVyaWZpZWQiOmZhbHNlLCJzdWIiOiJlZjI2MjBmYy1jOTljLTRkZDQtYmU2Ny1jZmQ1NTUyNDdmZWUifSwicm9sZSI6ImF1dGhlbnRpY2F0ZWQiLCJhYWwiOiJhYWwxIiwiYW1yIjpbeyJtZXRob2QiOiJwYXNzd29yZCIsInRpbWVzdGFtcCI6MTc1MDA1OTU2Nn1dLCJzZXNzaW9uX2lkIjoiYTEyYTU4ZGUtZDVlYi00MTRlLWFmNTYtYmM0NmM4YTA5OTEwIiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.ZpAkP6OfvVkGIEFDr2lXgne__JFtvdgCF-sb6BJljaE");
-        // TODO
+
     }
     private void getAllOrders(){
         SupabaseClient supabaseClient = new SupabaseClient();

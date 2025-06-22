@@ -4,108 +4,75 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Toast;
+import android.widget.TextView;;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
  public class SearchActivity extends AppCompatActivity {
-        private List<String> popularSearchTerms;
-        private RecyclerView searchTermRecyclerView;
-        private EditText searchEditText;
-        private ImageView clearSearchButton;
-        private SearchTermAdapter adapter;
+     private ImageButton returnButton;
+     private EditText searchEditText;
+     private ImageView clearSearchButton;
+     private TextView SearchTermsTextView;
+     private RecyclerView SearchTermsRecyclerView;
 
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.search);
-            // Инициализация элементов UI
-            initViews();
-            // Инициализация RecyclerView и данных
-            initRecyclerView();
-            // Настройка обработчиков
-            setupListeners();
-        }
-        private void initViews() {
-            searchEditText = findViewById(R.id.searchEditText);
-            clearSearchButton = findViewById(R.id.clearSearchButton);
-            searchTermRecyclerView = findViewById(R.id.popularSearchTermsRecyclerView);
-        }
-        private void initRecyclerView() {
-            // Заполнение списка популярных запросов
-            popularSearchTerms = new ArrayList<>();
-            popularSearchTerms.add("Dress");
-            popularSearchTerms.add("Suit");
-            popularSearchTerms.add("Accessories");
-            popularSearchTerms.add("T-shirt");
-            // Настройка RecyclerView
-            searchTermRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-            // Создание адаптера
-            adapter = new SearchTermAdapter(popularSearchTerms, searchTerm -> {
-                searchEditText.setText(searchTerm);
-                performSearch(searchTerm);
-            });
-            searchTermRecyclerView.setAdapter(adapter);
-            // Добавление разделителя между элементами
-            searchTermRecyclerView.addItemDecoration(
-                    new DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
-            );
-        }
-        private void setupListeners() {
-            // Обработчик очистки текста
-            clearSearchButton.setOnClickListener(v -> {
-                searchEditText.setText("");
-                clearSearchButton.setVisibility(View.GONE);
-                adapter.updateList(popularSearchTerms); // Восстанавливаем полный список
-            });
+     private SearchTermAdapter adapter;
+     private List<String> SearchTermList = new ArrayList<>();
 
-            // Отслеживание ввода текста
-            searchEditText.addTextChangedListener(new TextWatcher() {
-                @Override
-                public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.search);
 
-                @Override
-                public void onTextChanged(CharSequence s, int start, int before, int count) {
-                    clearSearchButton.setVisibility(s.length() > 0 ? View.VISIBLE : View.GONE);
-                    performSearch(s.toString()); // Фильтрация в реальном времени
-                }
+         returnButton = findViewById(R.id.returnyprofile);
+         searchEditText = findViewById(R.id.searchEditText);
+         clearSearchButton = findViewById(R.id.clearSearchButton);
+         SearchTermsTextView = findViewById(R.id.popularSearchTermsTextView);
+         SearchTermsRecyclerView = findViewById(R.id.popularSearchTermsRecyclerView);
 
-                @Override
-                public void afterTextChanged(Editable s) {}
-            });
-            // Обработка нажатия Enter
-            searchEditText.setOnEditorActionListener((v, actionId, event) -> {
-                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                    performSearch(searchEditText.getText().toString());
-                    return true;
-                }
-                return false;
-            });
-            // Первоначально скрываем кнопку очистки
-            clearSearchButton.setVisibility(View.GONE);
-        }
-        private void performSearch(String query) {
-            if (query.isEmpty()) {
-                adapter.updateList(popularSearchTerms);
-                return;
-            }
-            List<String> filteredList = new ArrayList<>();
-            for (String term : popularSearchTerms) {
-                if (term.toLowerCase().contains(query.toLowerCase())) {
-                    filteredList.add(term);
-                }
-            }
-            if (filteredList.isEmpty()) {
-                Toast.makeText(this, "No results found", Toast.LENGTH_SHORT).show();
-            }
-            adapter.updateList(filteredList);
-        }
-    }
+         SearchTermsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+         populatePopularSearchTerms();
+         adapter = new SearchTermAdapter(this, SearchTermList);
+         SearchTermsRecyclerView.setAdapter(adapter);
+
+         returnButton.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 finish();
+             }
+         });
+         searchEditText.addTextChangedListener(new TextWatcher() {
+             @Override
+             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+             }
+             @Override
+             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                 if (s.length() > 0) {
+                     clearSearchButton.setVisibility(View.VISIBLE);
+                 } else {
+                     clearSearchButton.setVisibility(View.GONE);
+                 }
+             }
+             @Override
+             public void afterTextChanged(Editable s) {
+             }
+         });
+         clearSearchButton.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 searchEditText.setText(""); // Clear the text
+             }
+         });
+     }
+     private void populatePopularSearchTerms() {
+         SearchTermList.add("Dresses");
+         SearchTermList.add("Suit");
+         SearchTermList.add("Accessories");
+     }
+ }
 

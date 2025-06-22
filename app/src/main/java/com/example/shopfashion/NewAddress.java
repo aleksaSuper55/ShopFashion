@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class NewAddress extends AppCompatActivity {
     private ImageButton returnToCart, search;
+    Button returnprofile;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,11 @@ public class NewAddress extends AppCompatActivity {
         returnToCart = findViewById(R.id.cartt);
         returnToCart.setOnClickListener(view -> {
             startActivity(new Intent(this, Cart.class));
+            finish();
+        });
+        returnprofile = findViewById(R.id.returnprofile);
+        returnprofile.setOnClickListener(view -> {
+            startActivity(new Intent(this, Profile.class));
             finish();
         });
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.banner), (v, insets) -> {

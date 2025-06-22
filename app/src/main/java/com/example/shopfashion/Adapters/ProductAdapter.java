@@ -8,9 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.bumptech.glide.Glide;
-import com.example.shopfashion.Models.Order;
 import com.example.shopfashion.Models.Product;
 import com.example.shopfashion.R;
 import java.util.List;

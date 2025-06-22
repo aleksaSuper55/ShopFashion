@@ -25,7 +25,7 @@ public class ForgotPassword extends AppCompatActivity {
         contpass = findViewById(R.id.contpass);
         // Навигация назад к экрану входа
         returnsing.setOnClickListener(v -> {
-            startActivity(new Intent(this, SignIn.class));
+            startActivity(new Intent(this, Login.class));
             finish();
         });
 
